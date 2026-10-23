@@ -37,7 +37,5 @@ limits: allocation caps and recursion depth.
 | hostile input | `go test -fuzz` for panics; a limit on the allocation a hostile header can ask for |
 
 Oracles: h5py, `h5dump` and `h5ls` from the HDF Group, whose C library is the
-reference reader. Corpus: the HDF Group's
-[example files](https://support.hdfgroup.org/documentation/hdf5/latest/_examples.html)
-and h5py's test files. Every item also needs unit tests at 100% coverage and a
+reference reader. Corpus: the HDF Group's example files and h5py's test files. Every item also needs unit tests at 100% coverage and a
 performance table against the reference.
