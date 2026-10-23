@@ -1,0 +1,36 @@
+/* go-sciio branding on Hextra (github.com/go-sciio/brand).
+ *
+ * The mark's gradient, #8FA3BF -> #3E516B (branding/svg/color/go-sciio.svg).
+ * Hextra derives its whole primary scale (links, active sidebar entry,
+ * buttons) from these three variables.
+ *
+ * Light theme: #3E516B = hsl(215 27% 33%), the gradient's dark end
+ *              (8.10:1 on white).
+ * Dark theme:  #8FA3BF = hsl(215 27% 65%), its light end (7.51:1 on the dark
+ *              background). */
+:root {
+  --primary-hue: 215deg;
+  --primary-saturation: 27%;
+  --primary-lightness: 33%;
+}
+.dark {
+  --primary-hue: 215deg;
+  --primary-saturation: 27%;
+  --primary-lightness: 65%;
+}
+
+/* Tables: their headers stand out in the brand colour and their text is a
+ * size smaller than the prose. In the dark theme the header keeps the dark
+ * end: white on #8FA3BF cannot be read. */
+.content table { font-size: 0.875em; }
+.content table th { background: #3E516B; color: #fff; }
+
+/* The version selector's list hangs from its button's right edge, so that it
+ * stays on screen at the end of the navbar. */
+.fs-version-select .hextra-nav-menu-items { left: auto !important; right: 0; transform: none !important; }
+
+/* The outdated-version banner (layouts/_partials/custom/content-begin.html). */
+.nd-outdated { margin-top: 1rem; padding: 0.75rem 1rem; border-radius: 0.5rem;
+  border: 1px solid #f59e0b; background: #fffbeb; color: #78350f; }
+.dark .nd-outdated { background: #451a03; color: #fde68a; border-color: #b45309; }
+.nd-outdated a { text-decoration: underline; font-weight: 600; }
