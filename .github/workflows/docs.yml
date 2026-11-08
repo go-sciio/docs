@@ -132,7 +132,10 @@ jobs:
       # --skip: this site's own pages (they exist only once this workflow has
       # deployed them, and the offline check above already proves every link
       # inside the site); and this repository's own files (on a pull request
-      # that adds them, they are not on main yet).
+      # that adds them, they are not on main yet); and MathWorks' MAT-file
+      # format PDF, which answers a program 403 and a browser a redirect to a
+      # sign-in page (the old curl loop only passed by following that redirect
+      # to the login form), so the link cannot be told dead or alive here.
       #
       # THE ONE DELIBERATE EXCEPTION to "no secret on a command line or in the
       # environment": the job's ephemeral, read-only github.token (permissions:
@@ -150,6 +153,7 @@ jobs:
             --token-file "${token}" \
             --skip go-sciio.github.io/docs \
             --skip github.com/go-sciio/docs/ \
+            --skip www.mathworks.com/help/pdf_doc/ \
             content/ README.md
 
   deploy:
